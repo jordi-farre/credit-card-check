@@ -1,0 +1,13 @@
+package net.jordifr.check.rules
+
+import net.jordifr.check.types.Card
+
+/**
+  * Created by 0a555836 on 03/01/2017.
+  */
+class PrefixRule(val cardType: Card, val prefix: String, val minSize: Integer, val maxSize: Integer) extends Rule {
+
+  override def matches(pan: String) = {
+    pan.startsWith(this.prefix) && pan.length >= this.minSize && pan.length <= this.maxSize
+  }
+}
