@@ -1,11 +1,9 @@
 package net.jordifr.check.rules
 
-import net.jordifr.check.types.CardType.Card
-
 /**
   * Created by Jordi Farré on 03/01/2017.
   */
-class PrefixRangeRule(val cardType: Card, val prefixInit: String, val prefixEnd: String, val minSize: Integer, val maxSize: Integer) extends Rule {
+class PrefixRangeRule(prefixInit: String, prefixEnd: String, minSize: Integer, maxSize: Integer) extends Rule {
 
   override def matches(pan: String) = {
     val initRange: Int = prefixInit.toInt
