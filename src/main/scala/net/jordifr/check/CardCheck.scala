@@ -20,11 +20,14 @@ class CardCheck {
     new PrefixRangeRule(cardType = DinersClubUnitedStatesAndCanada, prefixInit = "54", prefixEnd = "55", minSize = 16, maxSize = 16),
     new PrefixRule(cardType = DiscoverCard, prefix = "6011", minSize = 16, maxSize = 19),
     new PrefixRangeRule(cardType = DiscoverCard, prefixInit = "644", prefixEnd = "649", minSize = 16, maxSize = 19),
-    new PrefixRule(cardType = DiscoverCard, prefix = "65", minSize = 16, maxSize = 19)
+    new PrefixRule(cardType = DiscoverCard, prefix = "65", minSize = 16, maxSize = 19),
+    new PrefixRule(cardType = InterPayment, prefix = "636", minSize = 16, maxSize = 19)
   )
 
   def getCardType(pan: String): Card = {
-    this.rules.find(_.matches(pan)).get.cardType
+    this.rules.find(_.matches(pan)).getOrElse(new Rule {
+      override def cardType = UnknownCard
+    }).cardType
   }
 
 }

@@ -10,6 +10,6 @@ trait Rule {
 
   def cardType: Card
 
-  def matches(pan: String): Boolean
+  def matches(pan: String): Boolean = false
 
 }

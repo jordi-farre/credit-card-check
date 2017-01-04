@@ -21,4 +21,6 @@ object CardType {
 
   case object DiscoverCard extends Card
 
+  case object InterPayment extends Card
+
 }
