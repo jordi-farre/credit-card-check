@@ -21,7 +21,8 @@ class CardCheck {
     new PrefixRule(cardType = DiscoverCard, prefix = "6011", minSize = 16, maxSize = 19),
     new PrefixRangeRule(cardType = DiscoverCard, prefixInit = "644", prefixEnd = "649", minSize = 16, maxSize = 19),
     new PrefixRule(cardType = DiscoverCard, prefix = "65", minSize = 16, maxSize = 19),
-    new PrefixRule(cardType = InterPayment, prefix = "636", minSize = 16, maxSize = 19)
+    new PrefixRule(cardType = InterPayment, prefix = "636", minSize = 16, maxSize = 19),
+    new PrefixRangeRule(cardType = InstaPayment, prefixInit = "637", prefixEnd = "639", minSize = 16, maxSize = 16)
   )
 
   def getCardType(pan: String): Card = {
