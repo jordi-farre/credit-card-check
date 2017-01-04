@@ -1,5 +1,5 @@
 import net.jordifr.check.CardCheck
-import net.jordifr.check.types.ChinaUnionPay
+import net.jordifr.check.types.CardType.ChinaUnionPay
 import org.scalatest.{FeatureSpec, GivenWhenThen}
 
 /**
@@ -15,7 +15,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new ChinaUnionPay().name == cardType.name)
+      assert(ChinaUnionPay == cardType)
     }
     scenario("Starts by 62 and has a fixed length of 17 digits") {
       Given("a credit card with number 62123456789101234")
@@ -24,7 +24,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new ChinaUnionPay().name == cardType.name)
+      assert(ChinaUnionPay == cardType)
     }
     scenario("Starts by 62 and has a fixed length of 18 digits") {
       Given("a credit card with number 621234567891012345")
@@ -33,7 +33,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new ChinaUnionPay().name == cardType.name)
+      assert(ChinaUnionPay == cardType)
     }
     scenario("Starts by 62 and has a fixed length of 19 digits") {
       Given("a credit card with number 6212345678910123456")
@@ -42,7 +42,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new ChinaUnionPay().name == cardType.name)
+      assert(ChinaUnionPay == cardType)
     }
   }
 

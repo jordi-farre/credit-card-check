@@ -1,5 +1,5 @@
 import net.jordifr.check.CardCheck
-import net.jordifr.check.types.DinersClubCarteBlanche
+import net.jordifr.check.types.CardType.DinersClubCarteBlanche
 import org.scalatest.{FeatureSpec, GivenWhenThen}
 
 /**
@@ -15,7 +15,7 @@ class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new DinersClubCarteBlanche().name == cardType.name)
+      assert(DinersClubCarteBlanche == cardType)
     }
     scenario("Starts by 303 and has a fixed length of 14 digits") {
       Given("a credit card with number 30312345678915")
@@ -24,7 +24,7 @@ class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new DinersClubCarteBlanche().name == cardType.name)
+      assert(DinersClubCarteBlanche == cardType)
     }
     scenario("Starts by 305 and has a fixed length of 14 digits") {
       Given("a credit card with number 30512345678915")
@@ -33,7 +33,7 @@ class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new DinersClubCarteBlanche().name == cardType.name)
+      assert(DinersClubCarteBlanche == cardType)
     }
   }
 

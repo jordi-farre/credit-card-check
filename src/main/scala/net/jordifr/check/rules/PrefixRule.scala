@@ -1,6 +1,7 @@
 package net.jordifr.check.rules
 
-import net.jordifr.check.types.Card
+import net.jordifr.check.types.CardType.Card
+
 
 /**
   * Created by 0a555836 on 03/01/2017.

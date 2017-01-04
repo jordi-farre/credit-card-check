@@ -1,5 +1,5 @@
 import net.jordifr.check.CardCheck
-import net.jordifr.check.types.AmericanExpress
+import net.jordifr.check.types.CardType.AmericanExpress
 import org.scalatest.{FeatureSpec, GivenWhenThen}
 
 /**
@@ -15,7 +15,7 @@ class AmericanExpressSpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new AmericanExpress().name == cardType.name)
+      assert(AmericanExpress == cardType)
     }
     scenario("Starts by 37 and has a fixed length of 15 digits") {
       Given("a credit card with number 374945727217220")
@@ -24,7 +24,7 @@ class AmericanExpressSpec extends FeatureSpec with GivenWhenThen {
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
       Then("is an American Express card")
-      assert(new AmericanExpress().name == cardType.name)
+      assert(AmericanExpress == cardType)
     }
   }
 

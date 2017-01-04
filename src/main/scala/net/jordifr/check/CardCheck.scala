@@ -1,7 +1,7 @@
 package net.jordifr.check
 
 import net.jordifr.check.rules.{PrefixRangeRule, PrefixRule, Rule}
-import net.jordifr.check.types.{AmericanExpress, Card, ChinaUnionPay, DinersClubCarteBlanche}
+import net.jordifr.check.types.CardType.{AmericanExpress, Card, ChinaUnionPay, DinersClubCarteBlanche}
 
 /**
   * Created by 0a555836 on 03/01/2017.
@@ -9,10 +9,10 @@ import net.jordifr.check.types.{AmericanExpress, Card, ChinaUnionPay, DinersClub
 class CardCheck {
 
   val rules = List[Rule](
-    new PrefixRule(cardType = new AmericanExpress(), prefix = "34", minSize = 15, maxSize = 15),
-    new PrefixRule(cardType = new AmericanExpress(), prefix = "37", minSize = 15, maxSize = 15),
-    new PrefixRule(cardType = new ChinaUnionPay(), prefix = "62", minSize = 16, maxSize = 19),
-    new PrefixRangeRule(cardType = new DinersClubCarteBlanche(), prefixInit = "300", prefixEnd = "305", minSize = 14, maxSize = 14)
+    new PrefixRule(cardType = AmericanExpress, prefix = "34", minSize = 15, maxSize = 15),
+    new PrefixRule(cardType = AmericanExpress, prefix = "37", minSize = 15, maxSize = 15),
+    new PrefixRule(cardType = ChinaUnionPay, prefix = "62", minSize = 16, maxSize = 19),
+    new PrefixRangeRule(cardType = DinersClubCarteBlanche, prefixInit = "300", prefixEnd = "305", minSize = 14, maxSize = 14)
   )
 
   def getCardType(pan: String): Card = {
