@@ -13,4 +13,6 @@ object CardType {
 
   case object DinersClubCarteBlanche extends Card
 
+  case object DinersClubInternational extends Card
+
 }

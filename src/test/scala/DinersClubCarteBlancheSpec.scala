@@ -14,7 +14,7 @@ class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
       val number = "30012345678915";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a Diners Club Carte Blanche card")
       assert(DinersClubCarteBlanche == cardType)
     }
     scenario("Starts by 303 and has a fixed length of 14 digits") {
@@ -23,7 +23,7 @@ class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
       val number = "30312345678915";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a Diners Club Carte Blanche card")
       assert(DinersClubCarteBlanche == cardType)
     }
     scenario("Starts by 305 and has a fixed length of 14 digits") {
@@ -32,7 +32,7 @@ class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
       val number = "30512345678915";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a Diners Club Carte Blanche card")
       assert(DinersClubCarteBlanche == cardType)
     }
   }

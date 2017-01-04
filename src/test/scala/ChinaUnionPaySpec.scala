@@ -14,7 +14,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       val number = "6212345678910123";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a China Union Pay card")
       assert(ChinaUnionPay == cardType)
     }
     scenario("Starts by 62 and has a fixed length of 17 digits") {
@@ -23,7 +23,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       val number = "62123456789101234";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a China Union Pay card")
       assert(ChinaUnionPay == cardType)
     }
     scenario("Starts by 62 and has a fixed length of 18 digits") {
@@ -32,7 +32,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       val number = "621234567891012345";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a China Union Pay card")
       assert(ChinaUnionPay == cardType)
     }
     scenario("Starts by 62 and has a fixed length of 19 digits") {
@@ -41,7 +41,7 @@ class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
       val number = "6212345678910123456";
       When("we get the credit card type")
       val cardType = cardCheck.getCardType(number)
-      Then("is an American Express card")
+      Then("is a China Union Pay card")
       assert(ChinaUnionPay == cardType)
     }
   }
