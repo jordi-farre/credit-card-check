@@ -3,7 +3,7 @@ import net.jordifr.check.types.CardType.DinersClubCarteBlanche
 import org.scalatest.{FeatureSpec, GivenWhenThen}
 
 /**
-  * Created by 0a555836 on 03/01/2017.
+  * Created by Jordi Farré on 03/01/2017.
   */
 class DinersClubCarteBlancheSpec extends FeatureSpec with GivenWhenThen {
 

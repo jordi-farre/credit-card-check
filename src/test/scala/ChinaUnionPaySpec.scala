@@ -3,7 +3,7 @@ import net.jordifr.check.types.CardType.ChinaUnionPay
 import org.scalatest.{FeatureSpec, GivenWhenThen}
 
 /**
-  * Created by 0a555836 on 03/01/2017.
+  * Created by Jordi Farré on 03/01/2017.
   */
 class ChinaUnionPaySpec extends FeatureSpec with GivenWhenThen {
 
