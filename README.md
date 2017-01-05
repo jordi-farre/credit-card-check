@@ -1,27 +1,22 @@
-# credit-card-check
+# Credit Card Check
 
 Scala library to get the Credit Card type from a Credit Card number.
 
 Supported credit cards:
 
 - American Express.
-- Bankcard.
 - China UnionPay.
 - Diners Club Carte Blanche.
-- Diners Club enRoute.
 - Diners Club International.
 - Diners Club United States & Canada.
 - Discover Card.
 - InterPayment.
 - InstaPayment.
 - JCB.
-- Laser.
 - Maestro.
 - Dankort.
 - MIR.
 - MasterCard.
-- Solo.
-- Switch.
 - Visa.
 - UATP.
 - Verve.
@@ -30,3 +25,5 @@ Supported credit cards:
 Source for credit card formats:
 
 https://en.wikipedia.org/wiki/Payment_card_number
+
+This project is intended to improve my Scala skills. It has been developed with TDD and BDD from the beginning.

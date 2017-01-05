@@ -90,6 +90,18 @@ object CardType {
 
   }
 
-  val cards = List(AmericanExpress, DiscoverCard, ChinaUnionPay, DinersClubCarteBlanche, DinersClubInternational, DinersClubUnitedStatesAndCanada, InterPayment, InstaPayment, JCB, Maestro)
+  case object Dankort extends Card {
+
+    val rules = List(new PrefixRule(prefix = "5019", minSize = 16, maxSize = 16), new PrefixRule(prefix = "4175", minSize = 16, maxSize = 16), new PrefixRule(prefix = "4571", minSize = 16, maxSize = 16))
+
+  }
+
+  case object MIR extends Card {
+
+    val rules = List(new PrefixRangeRule(prefixInit = "2200", prefixEnd = "2204", minSize = 16, maxSize = 16))
+
+  }
+
+  val cards = List(AmericanExpress, DiscoverCard, ChinaUnionPay, DinersClubCarteBlanche, DinersClubInternational, DinersClubUnitedStatesAndCanada, InterPayment, InstaPayment, JCB, Dankort, Maestro, MIR)
 
 }
