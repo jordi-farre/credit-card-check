@@ -8,7 +8,7 @@ import net.jordifr.check.types.CardType._
 class CardCheck {
 
   def getCardType(pan: String): Card = {
-    cards.find(_.matches(pan)).get
+    cards.find(_.matches(pan)).getOrElse(UnknownCard)
   }
 
 }

@@ -15,6 +15,12 @@ object CardType {
 
   }
 
+  case object UnknownCard extends Card {
+
+    val rules = List()
+
+  }
+
   case object AmericanExpress extends Card {
 
     val rules = List(new PrefixRule(prefix = "34", minSize = 15, maxSize = 15), new PrefixRule(prefix = "37", minSize = 15, maxSize = 15))
@@ -72,6 +78,18 @@ object CardType {
 
   }
 
-  val cards = List(AmericanExpress, DiscoverCard, ChinaUnionPay, DinersClubCarteBlanche, DinersClubInternational, DinersClubUnitedStatesAndCanada, InterPayment, InstaPayment)
+  case object JCB extends Card {
+
+    val rules = List(new PrefixRangeRule(prefixInit = "3528", prefixEnd = "3589", minSize = 16, maxSize = 16))
+
+  }
+
+  case object Maestro extends Card {
+
+    val rules = List(new PrefixRule(prefix = "50", minSize = 12, maxSize = 19), new PrefixRangeRule(prefixInit = "56", prefixEnd = "58", minSize = 12, maxSize = 19), new PrefixRule(prefix = "6", minSize = 12, maxSize = 19))
+
+  }
+
+  val cards = List(AmericanExpress, DiscoverCard, ChinaUnionPay, DinersClubCarteBlanche, DinersClubInternational, DinersClubUnitedStatesAndCanada, InterPayment, InstaPayment, JCB, Maestro)
 
 }
