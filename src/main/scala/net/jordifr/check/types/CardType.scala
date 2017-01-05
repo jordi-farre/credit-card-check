@@ -1,6 +1,6 @@
 package net.jordifr.check.types
 
-import net.jordifr.check.rules.{PrefixRangeRule, PrefixRule, Rule}
+import net.jordifr.check.rules.{PatternRule, PrefixRangeRule, PrefixRule, Rule}
 
 /**
   * Created by Jordi Farré on 04/01/2017.
@@ -23,33 +23,31 @@ object CardType {
 
   case object AmericanExpress extends Card {
 
-    val rules = List(new PrefixRule(prefix = "34", minSize = 15, maxSize = 15), new PrefixRule(prefix = "37", minSize = 15, maxSize = 15))
+    val rules = List(new PatternRule("^34\\d{13}$|^37\\d{13}$"))
 
   }
 
   case object ChinaUnionPay extends Card {
 
-    val rules = List(new PrefixRule(prefix = "62", minSize = 16, maxSize = 19))
+    val rules = List(new PatternRule("^62\\d{14,17}$"))
 
   }
 
   case object DinersClubCarteBlanche extends Card {
 
-    val rules = List(new PrefixRangeRule(prefixInit = "300", prefixEnd = "305", minSize = 14, maxSize = 14))
+    val rules = List(new PatternRule("^30[0-5]\\d{11}$"))
 
   }
 
   case object DinersClubInternational extends Card {
 
-    val rules = List(new PrefixRule(prefix = "309", minSize = 14, maxSize = 14),
-      new PrefixRule(prefix = "36", minSize = 14, maxSize = 14),
-      new PrefixRangeRule(prefixInit = "38", prefixEnd = "39", minSize = 14, maxSize = 14))
+    val rules = List(new PatternRule("^30[0-5]\\d{11}$|^309\\d{11}$|^36\\d{12}$|^3[8-9]\\d{12}$"))
 
   }
 
   case object DinersClubUnitedStatesAndCanada extends Card {
 
-    val rules = List(new PrefixRangeRule(prefixInit = "54", prefixEnd = "55", minSize = 16, maxSize = 16))
+    val rules = List(new PatternRule("^54\\d{14}$|^55\\d{14}$"))
 
   }
 
@@ -68,37 +66,37 @@ object CardType {
 
   case object InterPayment extends Card {
 
-    val rules = List(new PrefixRule(prefix = "636", minSize = 16, maxSize = 19))
+    val rules = List(new PatternRule("^636\\d{13,16}$"))
 
   }
 
   case object InstaPayment extends Card {
 
-    val rules = List(new PrefixRangeRule(prefixInit = "637", prefixEnd = "639", minSize = 16, maxSize = 16))
+    val rules = List(new PatternRule("^63[7-9]\\d{13}$"))
 
   }
 
   case object JCB extends Card {
 
-    val rules = List(new PrefixRangeRule(prefixInit = "3528", prefixEnd = "3589", minSize = 16, maxSize = 16))
+    val rules = List(new PatternRule("^352[8-9]\\d{12}$|^35[3-8]\\d{13}$"))
 
   }
 
   case object Maestro extends Card {
 
-    val rules = List(new PrefixRule(prefix = "50", minSize = 12, maxSize = 19), new PrefixRangeRule(prefixInit = "56", prefixEnd = "58", minSize = 12, maxSize = 19), new PrefixRule(prefix = "6", minSize = 12, maxSize = 19))
+    val rules = List(new PatternRule("^50\\d{10,17}$|^5[6-8]\\d{10,17}$|^6\\d{11,18}$"))
 
   }
 
   case object Dankort extends Card {
 
-    val rules = List(new PrefixRule(prefix = "5019", minSize = 16, maxSize = 16), new PrefixRule(prefix = "4175", minSize = 16, maxSize = 16), new PrefixRule(prefix = "4571", minSize = 16, maxSize = 16))
+    val rules = List(new PatternRule("^5019\\d{12}$|^4175\\d{12}$|^4571\\d{12}$"))
 
   }
 
   case object MIR extends Card {
 
-    val rules = List(new PrefixRangeRule(prefixInit = "2200", prefixEnd = "2204", minSize = 16, maxSize = 16))
+    val rules = List(new PatternRule("^220[0-4]\\d{12}$"))
 
   }
 
